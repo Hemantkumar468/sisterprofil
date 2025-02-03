@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jyoti Kushwaha - Profile</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f0f4f7;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #2575fc;
+      color: white;
+      border-bottom: 4px solid #6a11cb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #6a11cb;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .hero-content .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: #2575fc;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .hero-content .btn:hover {
+      background-color: #e7f3fe;
+    }
+
+    .hero-image img {
+      width: 330px;
+      height: 200px;
+      border-radius: 5px;
+      border: 5px solid rgb(255, 255, 255);
+      transition: transform 0.3s;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.1);
+    }
+
+    /* About Section */
+    .about {
+      padding: 50px;
+      background-color: #f9f9f9;
+      border-top: 4px solid #2575fc;
+    }
+
+    .about .section-title {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .personal-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      border: 2px solid #6a11cb;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Education Section */
+    .education {
+      padding: 50px;
+      background-color: #ffffff;
+    }
+
+    .education-timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .education-card {
+      background: #e7f3fe;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 80%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease -in-out;
+      border: 2px solid #2575fc;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 50px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .map {
+      margin: 20px 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #2575fc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #6a11cb;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quick-links li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    .quick-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .quick-links a:hover {
+      color: #6a11cb;
+    }
+
+    .social-media {
+      margin: 10px 0;
+    }
+
+    .social-media a {
+      color: white;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .social-media a:hover {
+      color: #6a11cb;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 50px;
+      background-color: #ffffff;
+    }
+
+    .project-card {
+      background: #e7f3fe;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 80%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      border: 2px solid #2575fc;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+    .project-card p {
+      margin: 10px 0;
+    }
+
+    /* Skills Section */
+    .skills {
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .skills-list li {
+      background: #2575fc;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 10px;
+      transition: background-color 0.3s;
+      border: 2px solid #6a11cb;
+    }
+
+    .skills-list li:hover {
+      background: #6a11cb;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 30px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5em;
+      }
+
+      .hero-image img {
+        width: 250px;
+        height: 150px;
+      }
+
+      .personal-info {
+        flex-direction: column;
+      }
+
+      .info-card {
+        width: 100%;
+        text-align: center;
+      }
+
+      .education-card, .project-card {
+        width: 100%;
+      }
+
+      .contact-form input, .contact-form textarea {
+        width: 90%;
+      }
+
+      .contact-form button {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2em;
+      }
+
+      .hero-content p {
+        font-size: 1em;
+      }
+
+      . .contact-form input, .contact-form textarea {
+        width: 100%;
+      }
+
+      .contact-form button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Jyoti Kushwaha</div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Jyoti Kushwaha</h1>
+    <p>Aspiring Professional | B.Sc. Student</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+  <div class="hero-image">
+    <img src="opt.jpg" alt="Jyoti Kushwaha" class="profile-photo">
+  </div>
+</section>
+
+<section class="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="personal-info">
+    <div class="info-card">
+      <p><strong>Date of Birth:</strong> 8th September 2004</p>
+    </div>
+    <div class="info-card">
+      <p><strong>Father’s Name:</strong> Kailash Kushwaha</p>
+    </div>
+    <div class="info-card">
+      <p><strong>Mother’s Name:</strong> Sushila Kushwaha</p>
+    </div>
+    <div class="info-card">
+      <p><strong>Brother’s Name:</strong> Neelesh Kushwaha</p>
+    </div>
+    <div class="info-card">
+      <p><strong>Languages Known:</strong> English, Hindi</p>
+    </div>
+    <div class="info-card">
+      <p><strong>Height:</strong> 5 feet 4 inches</p>
+    </div>
+  </div>
+</section>
+
+<section class="education">
+  <h2 class="section-title">Educational Qualification</h2>
+  <div class="education-timeline">
+    <div class="education-card">
+      <h3>10th (High School)</h3>
+      <p>School Name: Deepak Memorial Inter College, Mauranipur, Jhansi</p>
+    </div>
+    <div class="education-card">
+      <h3>12th (Intermediate)</h3>
+      <p>School Name: Deepak Memorial Inter College, Mauranipur, Jhansi</p>
+    </div>
+    <div class="education-card">
+      <h3>Graduation (B.Sc. - 3rd Year)</h3>
+      <p>College/University Name: Ganeshi Bai Soni Science College, Mauranipur</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="project-card">
+    <h3>Project Title 1</h3>
+    <p>Description of the project, highlighting key features and technologies used.</p>
+    <a href="https://github.com/yourusername/project1" target="_blank" class="btn">View Project</a>
+  </div>
+  <div class="project-card">
+    <h3>Project Title 2</h3>
+    <p>Description of the project, highlighting key features and technologies used.</p>
+    <a href="https://github.com/yourusername/project2" target="_blank" class="btn">View Project</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Details</h2>
+  <p>Full Address: Churara, Mauranipur, Jhansi, Uttar Pradesh</p>
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153163!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f0f0f0f%3A0x0!2zQ2 h1dXJhbGUsIE1vdXJhbmVwciwgS3VzaHdhLCAxMjM0!5e0!3m2!1sen!2sin!4v1616161616161" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <ul class="quick-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="social-media">
+      <a href="https://www.linkedin.com" target="_blank"><i class="icon-linkedin"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="icon-instagram"></i></a>
+    </div>
+    <p>© 2023 Jyoti Kushwaha. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
